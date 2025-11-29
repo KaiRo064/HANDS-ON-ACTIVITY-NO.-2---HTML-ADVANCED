@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMCC-CCIS Week 2025 – Campus Event</title>
+  <link rel="icon" href="images/event-icon.png">
+  <style>
+    /* Reset / base */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f6fa;
+      color: #1f2937;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* layout container */
+    .wrap {
+      max-width: 1200px;
+      margin: 18px auto;
+      padding: 0 18px 48px;
+    }
+
+    /* header (green) */
+    header.site-header {
+      background: #0f8b2e; /* strong green */
+      color: #fff;
+      border-radius: 8px;
+      padding: 22px 28px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(15,23,42,0.08);
+    }
+    header .title {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    header .subtitle {
+      margin: 8px 0 0;
+      font-size: 14px;
+      opacity: .92;
+    }
+
+    /* nav (light blue) */
+    nav.site-nav {
+      background: #e9f2f9;
+      margin-top: 12px;
+      border-radius: 6px;
+      padding: 10px 14px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+    }
+    nav.site-nav a {
+      color: #0f3b2a;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+    nav.site-nav a:hover { background: rgba(15,59,42,0.04); }
+
+    /* main: two-column */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    /* cards */
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 2px 6px rgba(15,23,42,0.06);
+    }
+    .card h2 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+    }
+    .muted { color: #6b7280; font-size: 14px; }
+    .small { font-size: 13px; color: #6b7280; }
+
+    /* hero left card specifics */
+    #hero .hero-inner { display: flex; gap: 16px; align-items: flex-start; }
+    #hero img.banner {
+      width: 420px;
+      max-width: 100%;
+      border: 6px solid #e6fff3;
+      border-radius: 8px;
+      background: #f3f7f4;
+      object-fit: contain;
+    }
+
+    /* right aside specifics */
+    aside .info-title { font-weight: 700; margin-bottom: 8px; }
+    .info-list { margin: 8px 0 0 0; padding-left: 18px; }
+    .info-list li { margin: 6px 0; }
+
+    /* encoding box (dark green) */
+    .encode-box {
+      background: #05321b;
+      color: #dff7ea;
+      padding: 12px;
+      border-radius: 6px;
+      font-family: Menlo, Monaco, "Courier New", monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      display: inline-block;
+    }
+
+    /* schedule table simplified */
+    table.schedule { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    table.schedule th, table.schedule td {
+      padding: 8px 6px;
+      text-align: left;
+      border-bottom: 1px solid #eef2f7;
+      font-size: 14px;
+    }
+    table.schedule th { color: #0f5132; font-weight: 700; }
+
+    /* map responsive wrapper */
+    .embed-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; }
+    .embed-wrap iframe { position: absolute; left: 0; top: 0; width: 100%; height: 100%; border: 0; }
+
+    /* toggle button */
+    .btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #09985a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* dark code block */
+    pre.codeblock {
+      background: #072b21;
+      color: #dff7ea;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: Menlo, Monaco, monospace;
+      line-height: 1.5;
+    }
+
+    /* footer */
+    footer.site-footer {
+      margin-top: 18px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    /* FAQ hidden area */
+    #faq-area { display: none; margin-top: 10px; }
+
+    /* html vs xhtml demo */
+    .demo-snippet { background: #fff; border: 1px dashed #e6eef7; padding: 10px; border-radius: 6px; font-family: monospace; font-size: 13px; }
+
+    /* responsive rules */
+    @media (max-width: 980px) {
+      .main { grid-template-columns: 1fr; }
+      aside { order: 2; }
+    }
+    @media (max-width: 600px) {
+      nav.site-nav { flex-wrap: wrap; gap: 8px; }
+      .card { font-size: 14px; }
+      nav.site-nav a { display: block; margin-bottom: 8px; }
+      #hero .hero-inner { flex-direction: column; align-items: center; }
+      #hero img.banner { width: 100%; max-width: 420px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- header -->
+    <header class="site-header" role="banner">
+      <div>
+        <h1 class="title">SMCC-CCIS Week 2025 – Campus Event Showcase 🎓🎉</h1>
+        <p class="subtitle">Celebrating innovation, technology, and collaboration across the campus. ★ &hearts;</p>
+      </div>
+    </header>
+
+    <!-- nav -->
+    <nav class="site-nav" role="navigation" aria-label="main">
+      <a href="#overview">Overview</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#location">Location</a>
+      <a href="#faq-section">FAQ</a>
+      <a href="#tech-demo">Tech Demo</a>
+    </nav>
+
+    <!-- main content -->
+    <div class="main" role="main">
+
+      <!-- left column (main content) -->
+      <section id="overview" class="card" aria-labelledby="overview-heading">
+        <div id="hero">
+          <div class="hero-inner">
+            <!-- local image: place your banner/logo at images/ccis-banner.jpg -->
+            <img src="images/ccis-banner.jpg" alt="SMCC CCIS Week Banner" class="banner">
+            <div style="flex:1;">
+              <h2 id="overview-heading">Event Overview ★</h2>
+              <p class="muted"><strong>SMCC-CCIS Week 2025</strong> is an annual campus event that highlights student projects, industry talks, and hands-on workshops about software development, cybersecurity, artificial intelligence, and more.</p>
+
+              <p class="muted">Join us for a week of learning, networking, and fun ✓ as we celebrate the power of technology in education &amp; innovation.</p>
+
+              <p style="margin-top:12px;">
+                <strong>Date:</strong> March 10–14, 2025 &middot; <strong>Venue:</strong> SMCC Main Campus – IT Building
+              </p>
+
+              <p style="margin-top:12px;">
+                <a href="#registration" class="btn">Register Now →</a>
+                <a href="#schedule" class="btn" style="background:#0c6b3b; margin-left:8px;">View Schedule</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- articles -->
+        <article style="margin-top:16px;">
+          <h3>About the Event</h3>
+          <p class="small">A showcase of student creativity and skill — featuring hackathons, workshops, talks, and project exhibits. Attendees can learn new tools, collaborate, and compete for prizes.</p>
+        </article>
+
+        <article style="margin-top:12px;">
+          <h3>Highlights</h3>
+          <ul style="margin-top:6px;">
+            <li>Hackathon (24-hour): teamwork & rapid prototyping</li>
+            <li>Industry Talks: trends in AI, cybersecurity, and cloud</li>
+            <li>Project Expo: student capstones & demos</li>
+          </ul>
+        </article>
+
+        <!-- schedule -->
+        <div id="schedule" style="margin-top:14px;">
+          <div class="card">
+            <h2>Event Schedule ✓</h2>
+            <p class="small">Simplified schedule for main activities:</p>
+            <table class="schedule" aria-describedby="schedule-desc">
+              <caption id="schedule-desc" class="small muted">March 10–14, 2025</caption>
+              <thead>
+                <tr><th>Day</th><th>Time</th><th>Activity</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Mon</td><td>08:30–10:30</td><td>Opening Program & Keynote</td></tr>
+                <tr><td>Tue</td><td>09:00–12:00</td><td>Workshops (Web, AI)</td></tr>
+                <tr><td>Wed</td><td>10:00–17:00</td><td>Hackathon — Day 1</td></tr>
+                <tr><td>Thu</td><td>09:00–17:00</td><td>Hackathon — Day 2 & Expo</td></tr>
+                <tr><td>Fri</td><td>14:00–17:00</td><td>Awards & Closing</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- registration URL example & html vs xhtml demo -->
+        <div id="registration" class="card" style="margin-top:14px;">
+          <h3>Registration URL Example</h3>
+          <p class="small">Example URL (URL-encoded):</p>
+          <div class="demo-snippet" style="padding:12px; font-family: monospace;">
+            https://myschool.edu/events/register?event=IT%20Week%202025&amp;section=A
+          </div>
+          <p class="small" style="margin-top:8px;">Note: <code>%20</code> stands for a space character in URL encoding.</p>
+
+          <h3 style="margin-top:12px;">HTML vs XHTML Example</h3>
+          <p class="small">HTML style:</p>
+          <div class="demo-snippet">&lt;br&gt;<br>&lt;img src="images/logo.png" alt="Event Logo"&gt;</div>
+
+          <p class="small" style="margin-top:8px;">XHTML style:</p>
+          <div class="demo-snippet">&lt;br /&gt;<br>&lt;img src="images/logo.png" alt="Event Logo" /&gt;</div>
+
+          <p class="small" style="margin-top:8px;">In XHTML, tags must be properly closed and attributes must be quoted.</p>
+        </div>
+
+        <!-- tech demo -->
+        <div id="tech-demo" class="card" style="margin-top:14px;">
+          <h2>Tech Demo & Developer Notes</h2>
+          <p class="small">Sample commands (<code>&lt;pre&gt;</code> &amp; <code>&lt;code&gt;</code>):</p>
+          <pre class="codeblock"><code>// Clone the SMCC-CCIS Week repo
+git clone https://github.com/example/ccisweek2025.git
+
+// Install dependencies
+npm install
+
+// Start development server
+npm run dev
+          </code></pre>
+
+          <p style="margin-top:8px;" class="small">Open command palette: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></p>
+          <p class="small">Sample output: <samp>Server running at http://127.0.0.1:3000</samp></p>
+        </div>
+
+      </section>
+
+      <!-- right column (sidebar) -->
+      <aside class="card" aria-labelledby="contacts-heading">
+        <div>
+          <h3 id="contacts-heading" class="info-title">Event Info & Contacts</h3>
+          <p class="small">SMCC-CCIS Week 2025 is organized by the College of Computing &amp; Information Sciences.</p>
+          <p class="small">For inquiries, email: <a href="mailto:ccis@smccnasipit.edu.ph">ccis@smccnasipit.edu.ph</a></p>
+
+          <p style="margin-top:8px; font-weight:700;">Event highlights:</p>
+          <ul class="info-list">
+            <li>Live coding sessions</li>
+            <li>Industry speakers</li>
+            <li>Project exhibits</li>
+          </ul>
+
+          <hr style="margin:14px 0; border:none; border-top:1px solid #eef2f7;">
+
+          <h4 style="margin:8px 0;">Character Encoding</h4>
+          <p class="small">This page uses UTF-8 encoding, defined as:</p>
+          <div class="encode-box">&lt;meta charset="UTF-8"&gt;</div>
+
+          <p class="small" style="margin-top:10px;">Special characters &amp; entities: &copy; 2025 SMCC-CCIS Week &middot; All rights reserved.</p>
+        </div>
+
+        <!-- map card -->
+        <div style="margin-top:14px;">
+          <h4 style="margin-bottom:8px;">Venue & Map</h4>
+          <div class="embed-wrap card">
+            <!-- replace src with the real embed for accurate map -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.203467206314!2d125.6001!3d9.0746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301e9235096c5b7%3A0x8c0504437b36a0f0!2sSaint%20Michael%20College%20of%20Caraga!5e0!3m2!1sen!2sph!4v1706789122334"
+              title="SMCC Map" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <!-- FAQ toggle -->
+        <div style="margin-top:14px;">
+          <h4 style="margin-bottom:8px;">Frequently Asked Questions</h4>
+          <p class="small">Click to show or hide the full FAQ section.</p>
+          <button class="btn" onclick="toggleFAQ()">Toggle FAQ</button>
+        </div>
+
+      </aside>
+    </div>
+
+    <!-- FAQ section (placed below main to replicate screenshot) -->
+    <section id="faq-section" class="card" style="margin-top:18px;">
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <div id="faq-area" style="margin-top:10px;">
+        <p><strong>1. Is the event open to all students?</strong><br>Yes, the event is open to all departments and year levels.</p>
+        <p><strong>2. Do I need to register?</strong><br>Registration is required for competitions and workshops.</p>
+        <p><strong>3. Is there a registration fee?</strong><br>No, all SMCC-CCIS Week 2025 activities are free of charge.</p>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="site-footer">
+      <div>&copy; 2025 Saint Michael College of Caraga &middot; CCIS • All rights reserved.</div>
+      <div class="small" style="margin-top:6px;">Contact: Tel. +63 085 343-3251 / +63 085 283-3113 &middot; Fax: +63 085 808-0892</div>
+      <div class="small" style="margin-top:6px;">Address: Brgy. 4, Nasipit, Agusan del Norte, Philippines • <a href="https://www.smccnasipit.edu.ph" target="_blank" rel="noopener">www.smccnasipit.edu.ph</a></div>
+      <div class="small" style="margin-top:6px;">Emojis & symbols: ★ ✓ 🎉 🎓</div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Toggle FAQ using document.getElementById()
+    function toggleFAQ() {
+      var el = document.getElementById('faq-area');
+      if (!el) return;
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+        // scroll to top of FAQ section header to match UX in image
+        document.getElementById('faq-section').scrollIntoView({behavior:'smooth'});
+      } else {
+        el.style.display = 'block';
+        document.getElementById('faq-section').scrollIntoView({behavior:'smooth'});
+      }
+    }
+
+    // ensure FAQ hidden on load
+    document.addEventListener('DOMContentLoaded', function() {
+      var el = document.getElementById('faq-area');
+      if (el) el.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
